@@ -35,7 +35,7 @@ export default async function SearchResults({ params: { searchTerm } }: Props) {
                 ? Object.values(results).map(result => {
                     return <Item key={result.pageid} result={result} />
                 })
-                : <h2 className="p-2 text-xl">{`${searchTerm} Not Found`}</h2>
+                : <h2 className="p-2 text-xl">{`${searchTerm.replaceAll('%20', ' ')} Not Found`}</h2>
             }
         </main>
     )
